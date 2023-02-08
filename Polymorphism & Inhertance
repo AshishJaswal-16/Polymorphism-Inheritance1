@@ -1,0 +1,235 @@
+class printName {                       //Objects
+        String name ;
+        int age ;
+
+        public void getInfo() {
+            System.out.println("The name of the legend is: " + this.name);
+            System.out.println("The age of this legend is: " + this.age);
+        }
+    }
+     class FirstClass{
+    public static void main(String args[]){
+        printName n1 = new printName();
+        n1.name = "Bjorn";
+        n1.age = 1000;
+        n1.getInfo();
+    }
+
+}
+
+
+
+
+
+
+class printName {               //1Class-->Diff Objects
+        String name ;
+        int age ;
+
+        public void getInfo() {
+            System.out.println("The name of the legend is: " + this.name);
+            System.out.println("The age of this legend is: " + this.age);
+        }
+    }
+     class FirstClass{
+    public static void main(String args[]){
+        printName n1 = new printName();
+        n1.name = "Bjorn";
+        n1.age = 1000;
+        n1.getInfo();
+
+        printName n2 = new printName();
+        n2.age = 2000;
+        n2.name = "Ragnar";
+        n2.getInfo();
+    }
+}
+
+
+
+
+
+
+
+
+class printName {                       //Non-Parametarized Constr
+        String name ;
+        int age ;
+
+        public void getInfo() {
+            System.out.println("The name of the legend is: " + this.name);
+            System.out.println("The age of this legend is: " + this.age);
+        }
+        printName(){
+            System.out.println("Enjoy");
+        }
+    }
+     class FirstClass{
+    public static void main(String args[]){
+        printName n1 = new printName();
+        n1.name = "Bjorn";
+        n1.age = 1000;
+        n1.getInfo();
+
+        printName n2 = new printName();
+        n2.age = 2000;
+        n2.name = "Ragnar";
+        n2.getInfo();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+ class printName {                  //Parametarized Constructor
+        String name ;
+        int age ;
+
+        public void getInfo() {
+            System.out.println("The name of the legend is: " + this.name);
+            System.out.println("The age of this legend is: " + this.age);
+        }
+        printName(String name, int age){
+            System.out.println("Enjoy");
+            this.name = name;
+            this.age = age;
+        }
+    }
+     class FirstClass{
+    public static void main(String args[]){
+        printName n1 = new printName("Bjorn", 1000);
+      //  n1.name = "Lagertha";
+      //  n1.age = 5000;
+        n1.getInfo();
+
+        printName n2 = new printName("Ragnar", 2000);
+       // n2.age = 3000;
+       // n2.name = "Floki";
+        n2.getInfo();
+    }
+}
+
+
+
+
+
+class printName {               //Copy Constructors
+        String name ;
+        int age ;
+
+        public void getInfo() {
+            System.out.println("The name of the legend is: " + this.name);
+            System.out.println("The age of this legend is: " + this.age);
+        }
+        printName(printName n2){
+            System.out.println("Enjoy");
+            this.name = n2.name;
+            this.age = n2.age;
+
+        }
+        printName(){
+
+        }
+
+    }
+     class FirstClass{
+    public static void main(String args[]){
+        printName n1 = new printName();
+        n1.name = "Lagertha";
+        n1.age = 5000;
+
+       printName n2 = new printName(n1);
+//       n2.age = 300;
+//       n2.name = "Rollo";
+        n2.getInfo();
+
+    }
+}
+
+
+
+
+
+
+
+class printName{                //Polymorphism compiletime(overload)
+        String name;
+        int age;
+        public void printInfo(int age){
+            System.out.println(age);
+        }
+
+        public void printInfo(String name){
+            System.out.println(name);
+        }
+
+        public void printInfo(String name, int age){
+            System.out.println(name+" "+age);
+        }
+
+    }
+
+    public class FirstClass{
+        public static void main(String args[]){
+            printName n1 = new printName();
+            n1.name = "Bjorn";
+            n1.age = 2000;
+
+            n1.printInfo(n1.name);
+        }
+    }
+
+
+
+
+
+
+
+class Shape {               //Run time polymorphism or Inheritance
+    int b;
+    int h;
+    int r;
+    public void area() {
+        System.out.println("Displays Area of Shape");
+    }
+}
+class Triangle extends Shape {
+    public void area(int h, int b) {
+        System.out.println((1/2)*b*h);
+    }
+}
+class Circle extends Shape {
+    public void area(int r) {
+        System.out.println((3.14)*r*r);
+    }
+}
+
+
+public class FirstClass{
+        public static void main(String args[]){
+            Shape n1 = new Shape();
+            n1.b = 10;
+            n1.h = 20;
+            n1.r = 30;
+            n1.area();
+
+           Triangle n2 = new Triangle();
+            n2.b = 100;
+            n2.h = 20;
+            n2.r = 30;
+            n2.area(n2.b, n2.h);
+
+            Circle n3 = new Circle();
+            n3.b = 10;
+            n3.h = 20;
+            n3.r = 30;
+            n3.area(n3.r);
+        }
+
+    }
